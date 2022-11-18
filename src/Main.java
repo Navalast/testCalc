@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        calc();
+    }
+    private static void calc() {
         Scanner scanner = new Scanner(System.in);
         String[] act = {"+", "-", "/", "*"}; //здесь я сделал операторов для свитча
         String[] act2 = {"\\+", "-", "/", "\\*"}; //регулярное выражения
@@ -26,13 +29,12 @@ public class Main {
         a = Integer.parseInt(data[0]);
         b = Integer.parseInt(data[1]);
 
-
         switch (act[index]) { //оператор свитч, проверка по оператору
             case "+": result = a + b;
-            break;
+                break;
 
             case "-": result = a - b;
-            break;
+                break;
 
             case "/":
                 try {
@@ -42,7 +44,7 @@ public class Main {
                 }
                 break;
             case "*": result = a * b;
-            break;
+                break;
             default:
                 System.out.println("Некорректное выражение");
                 break;
@@ -52,6 +54,5 @@ public class Main {
         } else {
             System.out.println(result);
         }
-
     }
 }
