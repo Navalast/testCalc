@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        calc();
-    }
-    private static void calc() {
+    public static String calc(String value) {
         Scanner scanner = new Scanner(System.in);
+        value = scanner.nextLine();
         String[] act = {"+", "-", "/", "*"}; //здесь я сделал операторов для свитча
         String[] act2 = {"\\+", "-", "/", "\\*"}; //регулярное выражения
-        String value = scanner.nextLine(); //вводим нашу строку
+
         String s = null; //нужно для exception
         int result = 0; //по умолчанию 0
 
@@ -19,11 +17,9 @@ public class Main {
                 break;
             }
         }
-
         if(index==-1){ //здесь если ничего не находит
             System.out.println("Некорректное выражение");
-            return;
-        }
+        } 
         String[] data = value.split(act2[index]); //здесь преобразуем нашу строку в числа
         int a,b;
         a = Integer.parseInt(data[0]);
@@ -54,5 +50,11 @@ public class Main {
         } else {
             System.out.println(result);
         }
+        String result1;
+        result1 = String.valueOf(result);
+        return result1;
+    }
+    public static void main(String[] args) {
+        calc(null);
     }
 }
