@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static String calc(String value) {
-        Scanner scanner = new Scanner(System.in);
-        value = scanner.nextLine();
         String[] act = {"+", "-", "/", "*"}; //здесь я сделал операторов для свитча
         String[] act2 = {"\\+", "-", "/", "\\*"}; //регулярное выражения
 
@@ -55,6 +54,7 @@ public class Main {
         return result1;
     }
     public static void main(String[] args) {
-        calc(null);
+        String value = scanner.nextLine();
+        calc(value);
     }
 }
